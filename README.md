@@ -3,6 +3,9 @@
 > Multi-tenant enterprise operations & AI platform.
 > Next.js · TypeScript · Django · PostgreSQL + pgvector · Redis · Celery *(roadmap)*
 
+![Backend CI](https://github.com/JuanDavid-sys/nexus-ops/actions/workflows/backend-ci.yml/badge.svg)
+![Frontend CI](https://github.com/JuanDavid-sys/nexus-ops/actions/workflows/frontend-ci.yml/badge.svg)
+
 **Status:** 🚧 under active development — Phase 1 (vertical slice MVP).
 
 A company's information arrives through many channels — WhatsApp, email, forms, files, APIs.
