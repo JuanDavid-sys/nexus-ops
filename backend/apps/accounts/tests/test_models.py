@@ -11,7 +11,7 @@ pytestmark = pytest.mark.django_db
 class TestUserManager:
     def test_create_user_normalizes_email_domain(self):
         user = User.objects.create_user(email="juan@EXAMPLE.COM", password="secret-pass-123")
-        assert user.email == "juan@example.com"
+        assert user.email == "juan@EXAMPLE.COM"  # INTENTIONAL FAILURE
         assert user.is_active is True
         assert user.is_staff is False
         assert user.check_password("secret-pass-123")
