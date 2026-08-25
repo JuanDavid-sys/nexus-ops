@@ -2,16 +2,8 @@ name: Backend CI
 
 on:
   pull_request:
-    paths:
-      - "backend/**"
-      - "docker-compose.yml"
-      - ".github/workflows/backend-ci.yml"
   push:
     branches: [main]
-    paths:
-      - "backend/**"
-      - "docker-compose.yml"
-      - ".github/workflows/backend-ci.yml"
 
 concurrency:
   group: backend-ci-${{ github.ref }}

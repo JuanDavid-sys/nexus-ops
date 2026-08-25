@@ -2,16 +2,8 @@ name: Frontend CI
 
 on:
   pull_request:
-    paths:
-      - "frontend/**"
-      - "docker-compose.yml"
-      - ".github/workflows/frontend-ci.yml"
   push:
     branches: [main]
-    paths:
-      - "frontend/**"
-      - "docker-compose.yml"
-      - ".github/workflows/frontend-ci.yml"
 
 concurrency:
   group: frontend-ci-${{ github.ref }}
