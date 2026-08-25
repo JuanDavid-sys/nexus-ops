@@ -9,9 +9,10 @@ Rejected alternatives are stated explicitly — knowing *why not* is as valuable
 
 | ADR | Title | Status |
 |---|---|---|
-| 001 | Modular monolith over microservices | Planned — [issue #4](https://github.com/JuanDavid-sys/nexus-ops/issues/4) |
-| 002 | PostgreSQL + pgvector as primary datastore | Planned — [issue #4](https://github.com/JuanDavid-sys/nexus-ops/issues/4) |
-| 003 | Multi-tenancy: shared DB, shared schema, tenant FK | Planned — [issue #4](https://github.com/JuanDavid-sys/nexus-ops/issues/4) |
+| [ADR-001](ADR-001-modular-monolith.md) | Modular monolith over microservices | Accepted |
+| [ADR-002](ADR-002-postgresql-pgvector.md) | PostgreSQL + pgvector as the single datastore | Accepted |
+| [ADR-003](ADR-003-multi-tenancy.md) | Multi-tenancy: shared DB, shared schema, tenant FK | Accepted |
+| [ADR-004](ADR-004-always-run-ci.md) | Always-run CI pipelines over path filtering | Accepted |
 
 ## Format
 
