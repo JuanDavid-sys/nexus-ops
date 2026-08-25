@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Node
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+.eslintcache
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Databases & volumes
+*.sqlite3
+.pgdata/
+data/
+
+# IDE & OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+tmp/
