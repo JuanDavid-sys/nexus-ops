@@ -18,7 +18,22 @@ tenant, enforced by construction.
 
 ## Quick start
 
-Coming with issue #2 (Docker Compose one-command setup).
+Requires [Docker](https://docs.docker.com/get-docker/) and `make`.
+
+```bash
+cp .env.example .env
+make up
+```
+
+| Service | URL |
+|---|---|
+| Frontend (Next.js dev) | http://localhost:3000 |
+| Backend API / admin | http://localhost:8000/admin/ |
+| PostgreSQL 16 + pgvector | localhost:5432 (`nexus` / `nexus`) |
+| Redis | localhost:6379 |
+
+Common commands: `make up` · `make down` · `make logs` · `make migrate` · `make nuke` (wipe data) · `make help`.
+The stack runs with hot reload — edits under `backend/` and `frontend/` apply without restarting.
 
 ## License
 

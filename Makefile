@@ -1,4 +1,4 @@
-.PHONY: help install lint format backend-migrate frontend-dev
+.PHONY: help install lint format backend-migrate frontend-dev up down logs migrate nuke db-shell
 
 help: ## Show available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -28,4 +28,22 @@ backend-migrate: ## Apply backend migrations (dev)
 frontend-dev: ## Run Next.js dev server
 	cd frontend && npm run dev
 
-# Docker Compose targets arrive with issue #2.
+up: ## Start the full stack in detached mode (builds if needed)
+	docker compose up -d --build
+
+down: ## Stop the stack (data volumes are preserved)
+	docker compose down
+
+logs: ## Follow logs from all services
+	docker compose logs -f --tail=100
+
+migrate: ## Apply migrations inside the backend container
+	docker compose exec backend python manage.py migrate
+
+nuke: ## Stop the stack and delete data volumes (fresh database)
+	docker compose down -v
+
+db-shell: ## Open a PostgreSQL shell inside the db container
+	docker compose exec db psql -U $${POSTGRES_USER:-nexus} -d $${POSTGRES_DB:-nexus}
+
+# Native (non-Docker) targets below — useful when working outside the stack.
